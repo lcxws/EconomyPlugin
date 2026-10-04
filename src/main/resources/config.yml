@@ -1,0 +1,40 @@
+# ─────────────────────────────
+# 经济系统主配置文件
+# ─────────────────────────────
+
+# 货币名称
+currency-name: "金币"
+# 初始余额
+starting-balance: 100
+# 每日签到奖励
+daily-reward: 30
+
+# ===== 逐玩家动态定价 (指数公式，每物品独立变化率) =====
+# 每个物品的变化率在 prices.yml 的第4、5位设置
+# 格式: 物品名: [售出价, 买入价, "分类", 售出变化率%, 买入变化率%]
+#   售出变化率% = 该玩家每买1个，买入价涨的%（指数：e^(rate/100 × 数量)）
+#   买入变化率% = 该玩家每卖1个，卖出价跌的%（指数：e^(-rate/100 × 数量)）
+#
+# 衰减: 每位玩家每种物品，约 decay-interval-minutes 无交易 → 计数 × decay-factor
+#   多次无交易 = 价格缓慢回归基础价，不会一次性清零
+# ⚠️ 如果服务器已有旧 config.yml，请手动添加此段或删除 config.yml 让插件重新生成
+price:
+  decay-factor: 0.9               # 衰减因子 (0~1, 越小回归越快)
+  decay-interval-minutes: 30      # 衰减间隔 (分钟)
+  min-multiplier: 0.1             # 最低倍率
+  max-multiplier: 5.0             # 最高倍率
+
+# 计分板
+scoreboard:
+  enabled: true
+  title: "&6&l✦ 我的余额 ✦"
+  update-interval: 20
+
+# 商店
+shop:
+  rows: 4
+  categories:
+    - "原木"
+    - "矿物"
+    - "锭"
+    - "特殊"

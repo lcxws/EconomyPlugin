@@ -1,0 +1,26 @@
+name: EconomyPlugin
+main: com.mohistmc.economy.EconomyPlugin
+version: 2.0.4
+author: LcxwsBMN
+api-version: '1.20'
+
+commands:
+  balance:
+    description: 查看余额
+    usage: /balance
+  pay:
+    description: 转账给其他玩家
+    usage: /pay <玩家> <数量>
+  shop:
+    description: 打开商店 / 重载配置
+    usage: /shop [reload]
+  eco:
+    description: 管理员经济命令
+    usage: /eco <give|take|set|reload|top>
+    aliases: [economy]
+    permission: economy.admin
+
+permissions:
+  economy.admin:
+    default: op
+    description: 经济管理权限
