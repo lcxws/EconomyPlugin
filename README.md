@@ -1,6 +1,8 @@
 # EconomyPlugin
 
-轻量级 Minecraft 经济插件，面向 Mohist 1.20.1（BukkitAPI）。提供余额、转账、带**逐玩家动态定价**的商店与每日签到 API，并通过 Bukkit ServicesManager 对外暴露 **EconomyAPI** 接口，供其他插件接入（如 [TerritoryPlugin 领地插件](https://github.com/lcxws/TerritoryPlugin)）。
+轻量级 Minecraft 经济插件，面向 **Bukkit 系服务端 1.20 ～ 1.21.x**（Spigot / Paper / Mohist 等）。提供余额、转账、带**逐玩家动态定价**的商店与每日签到 API，并通过 Bukkit ServicesManager 对外暴露 **EconomyAPI** 接口，供其他插件接入（如 [TerritoryPlugin 领地插件](https://github.com/lcxws/TerritoryPlugin)）。
+
+> **版本兼容**：1.20 ～ 1.21.x 全系列（已在 1.21.1 API 上通过编译兼容性验证）；不支持 Folia 与 1.19 及更老版本。
 
 ## 功能
 
@@ -37,7 +39,7 @@ if (Bukkit.getPluginManager().isPluginEnabled("EconomyPlugin")) {
 
 ```bash
 ./gradlew build
-# 产物: build/libs/EconomyPlugin-2.0.4.jar
+# 产物: build/libs/EconomyPlugin-2.1.0.jar
 ```
 
 ## 开源协议
